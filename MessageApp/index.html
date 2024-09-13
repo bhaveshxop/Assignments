@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message via WebSocket</title>
+    <script src="app.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
+        <h2 class="text-xl font-bold mb-6 text-center">Send a Message</h2>
+        <form id="messageForm" class="space-y-4">
+            <div>
+                <label class="block text-gray-700">Phone Number</label>
+                <input type="text" id="phoneNumber" placeholder="" class="w-full border border-gray-300 p-2 rounded" required>
+            </div>
+            <div>
+                <label class="block text-gray-700">Message</label>
+                <textarea id="messageText" placeholder="Enter your message here" class="w-full border border-gray-300 p-2 rounded" required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send</button>
+        </form>
+        <p id="status" class="mt-4 text-center text-red-500"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeInSpace - Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser-arcade-physics.min.js" integrity="sha512-HUbl7YU9UJEwoU8NQpzzBxd+I+qSbyiUKojO4RHfGzIadFeNcDcHc5nAINtX8dsHAXJn/2pqhwwiEWFXl+6OgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-black text-white">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to SnakeInSpace</h1>
+            <p class="text-xl">Get ready for an epic adventure!</p>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div id="main-content" class="hidden relative">
+        <!-- Score Container -->
+        <div id="scoreContainer" class="absolute top-16 left-4 flex items-center space-x-2 z-10">
+            <img src="./assets/alien.png" alt="Alien Icon" class="h-8 w-8">
+            <span id="scoreNumber" class="text-xl text-white">0</span> <!-- Ensure text color is white -->
+        </div>
+        
+        <!-- Game Control Panel -->
+        <div id="gameControlPanel" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 hidden">
+            <div id="gameMessage" class="mb-4 text-center">
+                <h2 class="text-3xl mb-2 text-white" text-white>Game Over!</h2>
+                <p class="text-xl text-white">Final Score: <span id="finalScore">0</span></p>
+            </div>
+            <div class="space-x-4">
+                <button id="startGame" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-lg text-xl">
+                    Play Again
+                </button>
+                <a href="index.html">
+                    <button id="backToHome" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-lg text-xl">
+                        Home
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        // JavaScript to handle the splash screen and transition
+        window.addEventListener('load', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+
+            // Set a timeout to allow splash screen to be visible for a period
+            setTimeout(() => {
+                splashScreen.style.animation = 'fadeOut 2s ease-in-out forwards';
+                splashScreen.addEventListener('animationend', () => {
+                    splashScreen.style.display = 'none'; // Hide splash screen
+                    mainContent.style.display = 'block'; // Show main content
+                });
+            }, 2000); // Splash screen visible for 2 seconds before animation starts
+        });
+    </script>
+
+    <style>
+        /* CSS for splash screen and animation */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>

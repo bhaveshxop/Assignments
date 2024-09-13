@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Todo-s</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <script src="javascript/script.js"></script>
+</head>
+<body>
+  <div class="todo-container">
+    <h1 class="title"><i class="material-icons">check_box</i> My Todo-s</h1>
+    <div class="input-container">
+      <input type="text" placeholder="Add new..." id="new-todo-input">
+      <input type="date" class="set-date-button" id="todo-date-input">
+      <button id="add-todo-button" onclick="addTodo()">ADD</button>
+    </div>
+    
+    <div class="filter-sort">
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+      <select id="sort">
+        <option value="added-date">Added date</option>
+        <option value="due-date">Due date</option>
+      </select>
+    </div>
+
+    <ul id="todo-list">
+      <li class="todo-item" id="todo"></li> 
+    </ul>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Edit Todo</h2>
+      <input type="text" id="edit-todo-input">
+      <input type="date" id="edit-todo-date">
+      <button onclick="saveEdit()">Save</button>
+    </div>
+  </div>
+
+</body>
+</html>

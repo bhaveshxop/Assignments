@@ -1,0 +1,34 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 2s; /* Delay the start of the fade-out animation */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#main-content {
+    display: none;
+    /* Main content styles go here */
+}
